@@ -25,7 +25,7 @@ while not exit:
         exit = True
     else:
         movie = requestMovie(opt)
-        if movie['Response'] == False:
+        if movie['Response'] == 'False':
             print('Filme nao encontrado!')
         else:
             print_details(movie)
