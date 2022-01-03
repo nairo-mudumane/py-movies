@@ -10,6 +10,22 @@ def requestMovie(title):
     except Exception as err:
         print('Error:', err)
         return None
+def print_details(movie):
+    print('Titulo:',movie['Title'])
+    print('Ano:',movie['Year'])
+    print('Director:',movie['Director'])
+    print('Actores:',movie['Actors'])
+    print('Nota:',movie['imdbRating'])
+    print('')  
     
-movie = requestMovie('interstelar')
-print(movie)
+exit = False
+while not exit:
+    opt = input('Esreva o nome de um filme ou SAIR para fechar: ')
+    if opt == 'SAIR':
+        exit = True
+    else:
+        movie = requestMovie(opt)
+        if movie['Response'] == False:
+            print('Filme nao encontrado!')
+        else:
+            print_details(movie)
